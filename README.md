@@ -31,3 +31,11 @@ Are we using the built-in CLI tools? We can use the Karma test runner, things li
 # End-to-end testing
 What are we doing for this? Are we using Protractor or the newest Cypress? 
 This might actually influence how you design your code as well, because your end-to-end testers (if do you have a team for that) they may prefer to have IDs on some of your tags to make them easier to find for the test.
+
+# The core module
+Recommended by the Angular Style Guide. Core really is designed for your singleton type of services, anything that would be shared throughout the app and obviously any singleton would be good for that. 
+→ Services that are specific to a feature can go in the feature folder. In this scenario I would make a subfolder, call it services, put that in the feature folder and then that particular service would just be imported or provided directly into the feature module. This only make sense if this service will not be reused elsewhere.
+
+# The shared module
+Where we have our reusable components, pipes, directives and so on. An important distinguishing factor of this is will the component, pipe or directive be only used in this app or could it be used across apps? Is it so generic that you could reuse it over and over? If that’s the case, don’t put it in shared. That’s when we want to talk about creating an Angular library which I will try to talk in my next articles 😊.
+So, shared modules would normally be imported potentially multiple times. Core modules on the other hand, should only be imported once and that should only happen into the root.
