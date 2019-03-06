@@ -1,5 +1,5 @@
-# angular_notes
-How to plan your architecture
+# Notes for Angular Architecture
+<img src="https://github.com/latreta/angular_notes/blob/master/1_22skrCDLM6C3oRTuIecIng.png">
 
 # App Overview
 What is the application for? What are the goals? How is the client going to use it?
